@@ -2,11 +2,10 @@
 name: Deploy Platformatic DB application to the cloud
 
 on:
-  pull_request:
-    paths-ignore:
-      - 'docs/**'
-      - '**.md'
-
+  workflow_dispatch:
+  branch:
+    - main
+    
 jobs:
   build_and_deploy:
     permissions:
@@ -22,8 +21,8 @@ jobs:
         uses: platformatic/onestep@development
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          platformatic_workspace_id: d02caa49-39ca-45c2-ae4a-9e88c63fc299
-          platformatic_workspace_key: ${{ secrets.PLATFORMATIC_WORKSPACE_DYNAMIC_KEY }}
+          platformatic_workspace_id: 84858f07-d6c5-42bd-a1cb-beb7c5c00b5c
+          platformatic_workspace_key: ${{ secrets.PLATFORMATIC_WORKSPACE_STATIC_KEY }}
           platformatic_config_path: ./platformatic.db.json
           variables: custom_variable1, custom_variable2
           secrets: custom_secret1
