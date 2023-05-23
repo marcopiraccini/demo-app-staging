@@ -3,8 +3,9 @@ name: Deploy Platformatic DB application to the cloud
 
 on:
   workflow_dispatch:
-  branch:
-    - main
+  push:
+    branches:
+      - main
     
 jobs:
   build_and_deploy:
