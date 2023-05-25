@@ -3,5 +3,5 @@
 
 /** @param {import('fastify').FastifyInstance} app */
 module.exports = async function (app) {
-  console.log('The plugin has been loaded 22')
+  console.log('The plugin has been loaded 23')
 }
